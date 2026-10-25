@@ -527,11 +527,11 @@ if [ "$DE" == "1" ]; then
 elif [ "$DE" == "2" ]; then
     pacman -S xorg-server xfce4 xfce4-whiskermenu-plugin xclip maim xfce4-pulseaudio-plugin kitty fastfetch sddm networkmanager nano sudo labwc power-profiles-daemon --overwrite="*" --noconfirm
     mkdir -p /home/$USER_/.config/labwc
-    cat > /home/$USER_/.config/labwc/autostart << 'AUTOEOF'
+    cat > /home/$USER_/.config/labwc/autostart << 'cascavel-was-here'
     xfsettingsd &
     xfdesktop &
     xfce4-panel &
-AUTOEOF
+cascavel-was-here
     chmod +x /home/$USER_/.config/labwc/autostart
     chown -R $USER_:$USER_ /home/$USER_/.config
 fi
