@@ -525,7 +525,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 if [ "$DE" == "1" ]; then
     pacman -S plasma konsole dolphin wl-clipboard kitty fastfetch sddm networkmanager nano sudo power-profiles-daemon --overwrite="*" --noconfirm
 elif [ "$DE" == "2" ]; then
-    pacman -S xorg-server xfce4 xfce4-whiskermenu-plugin xclip maim xfce4-pulseaudio-plugin kitty fastfetch sddm networkmanager nano sudo power-profiles-daemon --overwrite="*" --noconfirm
+    pacman -S xorg-server xfce4 xfce4-whiskermenu-plugin xclip maim xfce4-pulseaudio-plugin kitty fastfetch sddm networkmanager nano sudo labwc power-profiles-daemon --overwrite="*" --noconfirm
+    mkdir -p /home/$USER_/.config/labwc
+    cat > /home/$USER_/.config/labwc/autostart << 'AUTOEOF'
+    xfsettingsd &
+    xfdesktop &
+    xfce4-panel &
+AUTOEOF
+    chmod +x /home/$USER_/.config/labwc/autostart
+    chown -R $USER_:$USER_ /home/$USER_/.config
 fi
 
 systemctl enable NetworkManager
