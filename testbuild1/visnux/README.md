@@ -1,3 +1,9 @@
-# Planning to install Visnux? Check the wiki: https://github.com/realv1sta/visnux/wiki
+visnux install file: visnuxinstall.sh
 
-## The iso: https://drive.google.com/file/d/1NtAXb32kmOJcy8yNuUi2wZJuYiHgzXfb/view?usp=sharing
+steps to debug: (subject to change)
+
+run with bash -x /path/to/installer to run the script
+
+recommended to use tail -f /path/to/debugfile (on this build, /tmp/visnux_install.log)
+
+downstream repository: https://github.com/realv1sta/visnux
